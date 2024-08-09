@@ -8,7 +8,7 @@ export default function Root() {
         <div className="container md:w-[90%] flex justify-between items-center">
             <h1 className="ml-3 sm:text-[21px] font-bold">BookMyMovie</h1>
             <nav className='hidden sm:flex'>
-                <ul className="flex gap-6 font-semibold">
+                <ul className="flex gap-6 font-semibold cursor-pointer">
                     <li><a href="#"></a>Home</li>
                     <li><a href="#"></a>About</li>
                     <li><a href="#"></a>Movie</li>
