@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 export default function Root() {
   return (
@@ -9,10 +9,11 @@ export default function Root() {
             <h1 className="ml-3 sm:text-[21px] font-bold">BookMyMovie</h1>
             <nav className='hidden sm:flex'>
                 <ul className="flex gap-6 font-semibold cursor-pointer">
-                    <li><a href="#"></a>Home</li>
+                    <li><Link to={"/"}>Home</Link></li>
                     <li><a href="#"></a>About</li>
                     <li><a href="#"></a>Movie</li>
                     <li><a href="#"></a>Contact</li>
+                    <li><Link to={"/signup"}>SignUp</Link></li>
                 </ul>
             </nav>
             <div className='md:hidden'>
