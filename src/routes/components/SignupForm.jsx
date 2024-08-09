@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useForm } from "react-hook-form";
 
 export default function SignupForm() {
@@ -7,7 +8,11 @@ export default function SignupForm() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    axios.post('http://localhost:4000/useres', data)
+    .then(response => console.log("User added"))
+    .catch(error => console.log("not added"))
+  };
 
   return (
     /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
