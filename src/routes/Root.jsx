@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 export default function Root() {
   return (
     <>
-      <header className='shadow-lg flex justify-center py-6 w-full z-[999] bg-white sticky top-0 left-0'>
+      <header className='h-[60px] shadow-lg flex justify-center py-6 w-full z-[999] bg-white sticky top-0 left-0 md:h-[80px] '>
         <div className="container md:w-[90%] flex justify-between items-center">
             <h1 className="ml-3 sm:text-[21px] font-bold">BookMyMovie</h1>
             <nav className='hidden sm:flex'>
@@ -15,8 +15,8 @@ export default function Root() {
                     <li><a href="#"></a>Contact</li>
                 </ul>
             </nav>
-            <div>
-                <i class="ri-menu-line font-bold text-[23px] mr-3"></i>
+            <div className='md:hidden'>
+                <i className="ri-menu-line font-bold text-[23px] mr-3"></i>
             </div>
         </div>
       </header>
