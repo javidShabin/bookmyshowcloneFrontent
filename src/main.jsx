@@ -10,6 +10,7 @@ import {
   } from "react-router-dom";
 import Home from './routes/Home';
 import SignUp from './routes/SignUp';
+import Movie from './routes/components/Movie';
 
   const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ import SignUp from './routes/SignUp';
         {
             path: "/signup",
             element: <SignUp/>
+        },
+        {
+            path: "/movie/:movieId",
+            element: <Movie/>
         }
       ]
     },
