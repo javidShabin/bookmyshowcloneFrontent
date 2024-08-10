@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import ErrorMssg from "./ErrorMssg";
 
 export default function SignupForm() {
   const {
@@ -25,8 +26,9 @@ export default function SignupForm() {
         className="mb-2 border border-indigo-600 py-2 rounded-md"
         type="text"
         id="name"
-        {...register("name", { required: true })}
+        {...register("name", { required: true, maxLength: 15 })}
       />
+      {errors.name && <ErrorMssg type={errors.name.type} field={"Name"} />}
 
       <label className="font-semibold" htmlFor="email">Email</label>
       <input
@@ -35,16 +37,19 @@ export default function SignupForm() {
         id="email"
         {...register("email", { required: true })}
       />
+      {errors.email && <ErrorMssg type={errors.email.type} field={"Email"} />}
 
       <label className="font-semibold" htmlFor="password">Password</label>
       <input
         className="mb-2 border border-indigo-600 py-2 rounded-md"
         type="password"
         id="password"
-        {...register("password", { required: true })}
+        {...register("password", { required: true, pattern: {
+            value: /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{6,12}$/
+        } })}
       />
 
-      {errors.exampleRequired && <span>This field is required</span>}
+      {errors.password && <ErrorMssg type={errors.password.type} field={"Password"} />}
 
       <input
         className="mt-6 p-2 bg-indigo-800 text-white rounded-md"
