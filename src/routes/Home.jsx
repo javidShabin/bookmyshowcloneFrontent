@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import MovieCard from "./MovieCard";
+import MovieCard from "./components/MovieCard";
+
 
 export default function Home() {
   // Get movie form the api
