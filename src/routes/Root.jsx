@@ -16,7 +16,7 @@ export default function Root() {
                     <li><a href="#"></a>About</li>
                     <li><a href="#"></a>Movie</li>
                     <li><a href="#"></a>Contact</li>
-                    <li><Link to={"/signup"}>SignUp</Link></li>
+                    <li><Link to={"/login"}>Login</Link></li>
                 </ul>
             </nav>
             <div className='md:hidden' onClick={showToggleBar}>

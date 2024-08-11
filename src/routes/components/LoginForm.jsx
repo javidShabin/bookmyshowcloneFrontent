@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useForm } from "react-hook-form";
 
 export default function LoginFor() {
@@ -7,7 +8,11 @@ export default function LoginFor() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    axios.post("http://localhost:4000/auth/login",data, {withCredentials: true})
+    .then(response => console.log("Success"))
+    .catch(error => console.log("Login filad"))
+  }
 
   return (
     /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
