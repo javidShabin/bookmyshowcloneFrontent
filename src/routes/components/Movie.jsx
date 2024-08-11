@@ -4,7 +4,6 @@ import { useLoaderData } from 'react-router-dom'
 export async function loader({params}) {
     const response = await fetch(`http://localhost:4000/movies/${params.movieId}`)
     const movie = await response.json()
-    console.log(movie)
     return {movie}
 }
 

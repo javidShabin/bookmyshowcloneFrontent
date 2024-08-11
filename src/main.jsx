@@ -11,6 +11,7 @@ import {
 import Home from './routes/Home';
 import SignUp from './routes/SignUp';
 import Movie, {loader as movieLoader} from './routes/components/Movie';
+import Login from './routes/Login';
 
   const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ import Movie, {loader as movieLoader} from './routes/components/Movie';
         {
             path: "/signup",
             element: <SignUp/>
+        },
+        {
+            path: "/login",
+            element: <Login/>
         },
         {
             path: "/movie/:movieId",
