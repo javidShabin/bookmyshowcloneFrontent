@@ -9,7 +9,7 @@ import Home from "./routes/Home";
 import SignUp from "./routes/SignUp";
 import Movie, { loader as movieLoader } from "./routes/components/Movie";
 import Login from "./routes/Login";
-import store from "./app/Store";
+import Store from './app/store';
 import { Provider } from "react-redux";
 
 
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Provider store={store}>
+    <Provider store={Store}>
       <RouterProvider router={router} />
     </Provider>
   </StrictMode>
