@@ -1,7 +1,10 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link, Outlet } from 'react-router-dom'
 
 export default function Root() {
+    const loggedIn = useSelector(state => state.login.loggedIn)
+    console.log(loggedIn)
     const showToggleBar = () => {
         alert("ShowToggle")
     }
@@ -16,7 +19,9 @@ export default function Root() {
                     <li><a href="#"></a>About</li>
                     <li><a href="#"></a>Movie</li>
                     <li><a href="#"></a>Contact</li>
-                    <li><Link to={"/login"}>Login</Link></li>
+                    {
+                        loggedIn? <li><Link to={"/logout"}>Logout</Link></li> : <li><Link to={"/login"}>Login</Link></li>
+                    }
                 </ul>
             </nav>
             <div className='md:hidden' onClick={showToggleBar}>
