@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { changeLoginStatust } from "../../features/login/loginSlice";
 
 export default function LoginFor() {
   const {
@@ -8,10 +10,18 @@ export default function LoginFor() {
     formState: { errors },
   } = useForm();
 
+  const dispatch = useDispatch(changeLoginStatust)
+
   const onSubmit = (data) => {
     axios.post("http://localhost:4000/auth/login",data, {withCredentials: true})
-    .then(response => console.log("Success"))
-    .catch(error => console.log("Login filad"))
+    .then(response => {
+        
+        console.log("Success")
+        dispatch(changeLoginStatust(true))
+    })
+    .catch(error => {
+        console.log("Login filad")
+    })
   }
 
   return (
